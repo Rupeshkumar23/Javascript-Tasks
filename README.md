@@ -1,4 +1,4 @@
-# Simple Webpage
+# Javascript Tasks
 
 This project showcases a simple webpage that utilizes the Document Object Model (DOM) for dynamic interactions.
 
