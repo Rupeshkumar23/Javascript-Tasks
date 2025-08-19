@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <h1>Javascript Tasks</h1>
+    </header>
+    <main>
+        <div class="calculator-section">
+            <h2>1. Salary Calculator</h2>
+            <div class="form-group">
+                <label for="basicSalary">Enter Basic Salary:</label>
+                <input type="number" id="basicSalary" min="0">
+                <button onclick="calculateAndDisplaySalary()">Calculate</button>
+            </div>
+            <div id="salaryResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>2. Distance Converter</h2>
+            <div class="form-group">
+                <label for="distance">Enter Distance (in km):</label>
+                <input type="number" id="distance" min="0" step="0.01">
+                <button onclick="convertAndDisplayDistance()">Convert</button>
+            </div>
+            <div id="distanceResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>3. Student Marks Calculator</h2>
+            <div class="form-group">
+                <label>Enter Marks for 5 Subjects (0-100):</label><br>
+                <input type="number" class="marks-input" min="0" max="100" placeholder="Subject 1">
+                <input type="number" class="marks-input" min="0" max="100" placeholder="Subject 2">
+                <input type="number" class="marks-input" min="0" max="100" placeholder="Subject 3">
+                <input type="number" class="marks-input" min="0" max="100" placeholder="Subject 4">
+                <input type="number" class="marks-input" min="0" max="100" placeholder="Subject 5">
+                <button onclick="calculateAndDisplayMarks()">Calculate</button>
+            </div>
+            <div id="marksResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>4. Temperature Converter</h2>
+            <div class="form-group">
+                <label for="fahrenheit">Enter Temperature (°F):</label>
+                <input type="number" id="fahrenheit" step="0.01">
+                <button onclick="convertTemperature()">Convert to Celsius</button>
+            </div>
+            <div id="temperatureResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>5. Area & Perimeter Calculator</h2>
+            <div class="form-group">
+                <h3>Rectangle</h3>
+                <label for="length">Length:</label>
+                <input type="number" id="length" step="0.01">
+                <label for="breadth">Breadth:</label>
+                <input type="number" id="breadth" step="0.01">
+                <h3>Circle</h3>
+                <label for="radius">Radius:</label>
+                <input type="number" id="radius" step="0.01">
+                <button onclick="calculateShapes()">Calculate</button>
+            </div>
+            <div id="shapesResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>6. Number Interchange</h2>
+            <div class="form-group">
+                <label for="numberC">Enter Number C:</label>
+                <input type="number" id="numberC">
+                <label for="numberD">Enter Number D:</label>
+                <input type="number" id="numberD">
+                <button onclick="interchangeNumbers()">Interchange</button>
+            </div>
+            <div id="interchangeResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>7. Sum of Digits</h2>
+            <div class="form-group">
+                <label for="fiveDigitSum">Enter a 5-digit number:</label>
+                <input type="number" id="fiveDigitSum" min="10000" max="99999">
+                <button onclick="calculateDigitSum()">Calculate Sum</button>
+            </div>
+            <div id="digitSumResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>8. Reverse Number</h2>
+            <div class="form-group">
+                <label for="fiveDigitReverse">Enter a 5-digit number:</label>
+                <input type="number" id="fiveDigitReverse" min="10000" max="99999">
+                <button onclick="reverseNumber()">Reverse</button>
+            </div>
+            <div id="reverseResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>9. First-Last Digit Sum</h2>
+            <div class="form-group">
+                <label for="fourDigitNumber">Enter a 4-digit number:</label>
+                <input type="number" id="fourDigitNumber" min="1000" max="9999">
+                <button onclick="calculateFirstLastSum()">Calculate Sum</button>
+            </div>
+            <div id="firstLastSumResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>10. Population Literacy Calculator</h2>
+            <div class="form-group">
+                <label for="population">Enter Population:</label>
+                <input type="number" id="population" value="80000">
+                <button onclick="calculateLiteracy()">Calculate</button>
+            </div>
+            <div id="literacyResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>11. Currency Denominator</h2>
+            <div class="form-group">
+                <label for="amount">Enter Amount (in Rs.):</label>
+                <input type="number" id="amount" min="0" step="1">
+                <button onclick="calculateDenominations()">Calculate Notes</button>
+            </div>
+            <div id="denominationResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>12. Cost Price Calculator</h2>
+            <div class="form-group">
+                <label for="sellingPrice">Total Selling Price (15 items):</label>
+                <input type="number" id="sellingPrice" min="0" step="0.01">
+                <label for="totalProfit">Total Profit:</label>
+                <input type="number" id="totalProfit" min="0" step="0.01">
+                <button onclick="calculateCostPrice()">Calculate</button>
+            </div>
+            <div id="costPriceResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>13. Add One to Digits</h2>
+            <div class="form-group">
+                <label for="fiveDigitAdd">Enter a 5-digit number:</label>
+                <input type="number" id="fiveDigitAdd" min="10000" max="99999">
+                <button onclick="addOneToDigits()">Add One to Each Digit</button>
+            </div>
+            <div id="addOneResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>14. Discount Calculator</h2>
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" min="1">
+                <label for="pricePerItem">Price per Item:</label>
+                <input type="number" id="pricePerItem" min="0" step="0.01">
+                <button onclick="calculateDiscount()">Calculate Total</button>
+            </div>
+            <div id="discountResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>15. Employee Bonus Calculator</h2>
+            <div class="form-group">
+                <label for="currentYear">Current Year:</label>
+                <input type="number" id="currentYear" value="2025">
+                <label for="joinYear">Year of Joining:</label>
+                <input type="number" id="joinYear">
+                <button onclick="calculateBonus()">Check Bonus</button>
+            </div>
+            <div id="bonusResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>16. Advanced Salary Calculator</h2>
+            <div class="form-group">
+                <label for="basicSalaryAdv">Basic Salary:</label>
+                <input type="number" id="basicSalaryAdv" min="0" step="0.01">
+                <button onclick="calculateAdvancedSalary()">Calculate Gross Salary</button>
+            </div>
+            <div id="advSalaryResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>17. Student Division Calculator</h2>
+            <div class="form-group">
+                <label>Enter Marks for 5 Subjects (0-100):</label><br>
+                <input type="number" class="division-marks" min="0" max="100" placeholder="Subject 1">
+                <input type="number" class="division-marks" min="0" max="100" placeholder="Subject 2">
+                <input type="number" class="division-marks" min="0" max="100" placeholder="Subject 3">
+                <input type="number" class="division-marks" min="0" max="100" placeholder="Subject 4">
+                <input type="number" class="division-marks" min="0" max="100" placeholder="Subject 5">
+                <button onclick="calculateDivision()">Calculate Division</button>
+            </div>
+            <div id="divisionResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>18. Driver Insurance Checker</h2>
+            <div class="form-group">
+                <label>Marital Status:</label>
+                <select id="maritalStatus">
+                    <option value="married">Married</option>
+                    <option value="unmarried">Unmarried</option>
+                </select>
+                <label>Gender:</label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label for="driverAge">Age:</label>
+                <input type="number" id="driverAge" min="18" max="100">
+                <button onclick="checkInsurance()">Check Insurance</button>
+            </div>
+            <div id="insuranceResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>19. Employee Salary Calculator</h2>
+            <div class="form-group">
+                <label>Gender:</label>
+                <select id="empGender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <label for="yearsOfService">Years of Service:</label>
+                <input type="number" id="yearsOfService" min="0">
+                <label>Qualification:</label>
+                <select id="qualification">
+                    <option value="postgraduate">Post Graduate</option>
+                    <option value="graduate">Graduate</option>
+                </select>
+                <button onclick="calculateEmployeeSalary()">Calculate Salary</button>
+            </div>
+            <div id="empSalaryResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>20. Profit/Loss Calculator</h2>
+            <div class="form-group">
+                <label for="costPrice">Cost Price:</label>
+                <input type="number" id="costPrice" min="0" step="0.01">
+                <label for="sellingPrice2">Selling Price:</label>
+                <input type="number" id="sellingPrice2" min="0" step="0.01">
+                <button onclick="calculateProfitLoss()">Calculate</button>
+            </div>
+            <div id="profitLossResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>21. Even/Odd Checker</h2>
+            <div class="form-group">
+                <label for="numberToCheck">Enter a number:</label>
+                <input type="number" id="numberToCheck">
+                <button onclick="checkEvenOdd()">Check</button>
+            </div>
+            <div id="evenOddResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>22. Number Palindrome Checker</h2>
+            <div class="form-group">
+                <label for="palindromeNumber">Enter a five-digit number:</label>
+                <input type="number" id="palindromeNumber" min="10000" max="99999">
+                <button onclick="checkPalindrome()">Check</button>
+            </div>
+            <div id="palindromeResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>23. Age Comparison</h2>
+            <div class="form-group">
+                <label for="ageRam">Ram's Age:</label>
+                <input type="number" id="ageRam" min="0">
+                <label for="ageShyam">Shyam's Age:</label>
+                <input type="number" id="ageShyam" min="0">
+                <label for="ageAjay">Ajay's Age:</label>
+                <input type="number" id="ageAjay" min="0">
+                <button onclick="findYoungest()">Find Youngest</button>
+            </div>
+            <div id="ageResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>24. Triangle Validator</h2>
+            <div class="form-group">
+                <label for="angle1">First Angle:</label>
+                <input type="number" id="angle1" min="0" max="180">
+                <label for="angle2">Second Angle:</label>
+                <input type="number" id="angle2" min="0" max="180">
+                <label for="angle3">Third Angle:</label>
+                <input type="number" id="angle3" min="0" max="180">
+                <button onclick="validateTriangle()">Check Triangle</button>
+            </div>
+            <div id="triangleResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>25. Absolute Value Calculator</h2>
+            <div class="form-group">
+                <label for="numberForAbs">Enter a number:</label>
+                <input type="number" id="numberForAbs">
+                <button onclick="findAbsolute()">Find Absolute</button>
+            </div>
+            <div id="absoluteResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>26. Rectangle Area vs Perimeter</h2>
+            <div class="form-group">
+                <label for="rectLength">Length:</label>
+                <input type="number" id="rectLength" min="0" step="0.01">
+                <label for="rectWidth">Width:</label>
+                <input type="number" id="rectWidth" min="0" step="0.01">
+                <button onclick="compareAreaPerimeter()">Compare</button>
+            </div>
+            <div id="rectCompareResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>27. Leap Year Checker</h2>
+            <div class="form-group">
+                <label for="yearToCheck">Enter Year:</label>
+                <input type="number" id="yearToCheck" min="0">
+                <button onclick="checkLeapYear()">Check Year</button>
+            </div>
+            <div id="leapYearResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>28. Steel Grade Calculator</h2>
+            <div class="form-group">
+                <label for="hardness">Hardness:</label>
+                <input type="number" id="hardness" step="0.1">
+                <label for="carbonContent">Carbon Content:</label>
+                <input type="number" id="carbonContent" step="0.01">
+                <label for="tensileStrength">Tensile Strength:</label>
+                <input type="number" id="tensileStrength" step="0.1">
+                <button onclick="calculateSteelGrade()">Calculate Grade</button>
+            </div>
+            <div id="steelGradeResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>29. Library Fine Calculator</h2>
+            <div class="form-group">
+                <label for="daysLate">Days Late:</label>
+                <input type="number" id="daysLate" min="0">
+                <button onclick="calculateLibraryFine()">Calculate Fine</button>
+            </div>
+            <div id="libraryFineResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>30. Worker Efficiency Calculator</h2>
+            <div class="form-group">
+                <label for="timeRequired">Time Taken (in hours):</label>
+                <input type="number" id="timeRequired" min="0" step="0.1">
+                <button onclick="calculateEfficiency()">Check Efficiency</button>
+            </div>
+            <div id="efficiencyResult"></div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2025 Created by RK</p>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>
