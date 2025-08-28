@@ -671,3 +671,280 @@ function calculateEfficiency() {
         <p>Worker Efficiency: ${efficiency}</p>
     `;
 }
+
+// Factor Finder
+function findFactors() {
+    const number = parseInt(document.getElementById('factorNumber').value);
+    if (isNaN(number) || number < 1) {
+        document.getElementById('factorResult').innerHTML = 'Please enter a valid positive number';
+        return;
+    }
+
+    const factors = [];
+    for (let i = 1; i <= number; i++) {
+        if (number % i === 0) {
+            factors.push(i);
+        }
+    }
+
+    document.getElementById('factorResult').innerHTML = `
+        <h3>Factors of ${number}:</h3>
+        <p>${factors.join(', ')}</p>
+    `;
+}
+
+// Prime Number Checker
+function checkPrime() {
+    const number = parseInt(document.getElementById('primeNumber').value);
+    if (isNaN(number) || number < 1) {
+        document.getElementById('primeResult').innerHTML = 'Please enter a valid positive number';
+        return;
+    }
+
+    let isPrime = number > 1;
+    for (let i = 2; i <= Math.sqrt(number); i++) {
+        if (number % i === 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    document.getElementById('primeResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>${number} is ${isPrime ? 'a prime number' : 'not a prime number'}</p>
+    `;
+}
+
+// Armstrong Number Checker
+function isArmstrong(num) {
+    const digits = num.toString().split('');
+    const power = digits.length;
+    const sum = digits.reduce((acc, digit) => acc + Math.pow(parseInt(digit), power), 0);
+    return sum === num;
+}
+
+function checkArmstrong() {
+    const number = parseInt(document.getElementById('armstrongNumber').value);
+    if (isNaN(number) || number < 1) {
+        document.getElementById('armstrongResult').innerHTML = 'Please enter a valid positive number';
+        return;
+    }
+
+    document.getElementById('armstrongResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>${number} is ${isArmstrong(number) ? 'an Armstrong number' : 'not an Armstrong number'}</p>
+    `;
+}
+
+// Armstrong Numbers Range
+function findArmstrongNumbers() {
+    const armstrongNumbers = [];
+    for (let i = 1; i <= 10000; i++) {
+        if (isArmstrong(i)) {
+            armstrongNumbers.push(i);
+        }
+    }
+
+    document.getElementById('armstrongRangeResult').innerHTML = `
+        <h3>Armstrong Numbers (1-10000):</h3>
+        <p>${armstrongNumbers.join(', ')}</p>
+    `;
+}
+
+// Odd/Even Counter
+document.getElementById('numberLimit')?.addEventListener('change', function() {
+    const limit = parseInt(this.value);
+    const container = document.getElementById('numberInputs');
+    container.innerHTML = '';
+
+    for (let i = 0; i < limit; i++) {
+        container.innerHTML += `
+            <input type="number" class="number-input" placeholder="Enter number ${i + 1}">
+        `;
+    }
+});
+
+function countOddEven() {
+    const inputs = document.getElementsByClassName('number-input');
+    let evenCount = 0;
+    let oddCount = 0;
+
+    for (let input of inputs) {
+        const num = parseInt(input.value);
+        if (!isNaN(num)) {
+            if (num % 2 === 0) evenCount++;
+            else oddCount++;
+        }
+    }
+
+    document.getElementById('oddEvenResult').innerHTML = `
+        <h3>Results:</h3>
+        <p>Even numbers: ${evenCount}</p>
+        <p>Odd numbers: ${oddCount}</p>
+    `;
+}
+
+// Number Reverser
+function reverseNumber() {
+    const number = document.getElementById('numberToReverse').value;
+    if (!number) {
+        document.getElementById('reverseNumberResult').innerHTML = 'Please enter a valid number';
+        return;
+    }
+
+    const reversed = number.split('').reverse().join('');
+    document.getElementById('reverseNumberResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>Original number: ${number}</p>
+        <p>Reversed number: ${reversed}</p>
+    `;
+}
+
+// Decimal to Binary Converter
+function convertToBinary() {
+    const decimal = parseInt(document.getElementById('decimalNumber').value);
+    if (isNaN(decimal) || decimal < 0) {
+        document.getElementById('binaryResult').innerHTML = 'Please enter a valid non-negative number';
+        return;
+    }
+
+    const binary = decimal.toString(2);
+    document.getElementById('binaryResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>Decimal: ${decimal}</p>
+        <p>Binary: ${binary}</p>
+    `;
+}
+
+// Binary to Decimal Converter
+function convertToDecimal() {
+    const binary = document.getElementById('binaryNumber').value;
+    if (!/^[01]+$/.test(binary)) {
+        document.getElementById('decimalResult').innerHTML = 'Please enter a valid binary number (0s and 1s only)';
+        return;
+    }
+
+    const decimal = parseInt(binary, 2);
+    document.getElementById('decimalResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>Binary: ${binary}</p>
+        <p>Decimal: ${decimal}</p>
+    `;
+}
+
+// Factorial Calculator
+function calculateFactorial() {
+    const number = parseInt(document.getElementById('factorialNumber').value);
+    if (isNaN(number) || number < 0) {
+        document.getElementById('factorialResult').innerHTML = 'Please enter a valid non-negative number';
+        return;
+    }
+
+    let factorial = 1;
+    for (let i = 2; i <= number; i++) {
+        factorial *= i;
+    }
+
+    document.getElementById('factorialResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>Factorial of ${number} is: ${factorial}</p>
+    `;
+}
+
+// Fibonacci Series Generator
+function generateFibonacci() {
+    const limit = parseInt(document.getElementById('fibLimit').value);
+    if (isNaN(limit) || limit < 1) {
+        document.getElementById('fibonacciResult').innerHTML = 'Please enter a valid positive number';
+        return;
+    }
+
+    let series = [0, 1];
+    while (series.length < limit) {
+        series.push(series[series.length - 1] + series[series.length - 2]);
+    }
+
+    document.getElementById('fibonacciResult').innerHTML = `
+        <h3>Fibonacci Series:</h3>
+        <p>${series.join(', ')}</p>
+    `;
+}
+
+// Perfect Number Checker
+function isPerfect(num) {
+    let sum = 0;
+    for (let i = 1; i < num; i++) {
+        if (num % i === 0) {
+            sum += i;
+        }
+    }
+    return sum === num;
+}
+
+function checkPerfectNumber() {
+    const number = parseInt(document.getElementById('perfectNumber').value);
+    if (isNaN(number) || number < 1) {
+        document.getElementById('perfectResult').innerHTML = 'Please enter a valid positive number';
+        return;
+    }
+
+    document.getElementById('perfectResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>${number} is ${isPerfect(number) ? 'a perfect number' : 'not a perfect number'}</p>
+    `;
+}
+
+// Perfect Numbers Range
+function findPerfectNumbers() {
+    const perfectNumbers = [];
+    for (let i = 1; i <= 1000; i++) {
+        if (isPerfect(i)) {
+            perfectNumbers.push(i);
+        }
+    }
+
+    document.getElementById('perfectRangeResult').innerHTML = `
+        <h3>Perfect Numbers (1-1000):</h3>
+        <p>${perfectNumbers.join(', ')}</p>
+    `;
+}
+
+// Strong Number Checker
+function factorial(n) {
+    if (n === 0 || n === 1) return 1;
+    return n * factorial(n - 1);
+}
+
+function checkStrongNumber() {
+    const number = parseInt(document.getElementById('strongNumber').value);
+    if (isNaN(number) || number < 1) {
+        document.getElementById('strongResult').innerHTML = 'Please enter a valid positive number';
+        return;
+    }
+
+    const sum = number.toString()
+        .split('')
+        .reduce((acc, digit) => acc + factorial(parseInt(digit)), 0);
+
+    document.getElementById('strongResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>${number} is ${sum === number ? 'a strong number' : 'not a strong number'}</p>
+    `;
+}
+
+// Power Calculator
+function calculatePower() {
+    const base = parseFloat(document.getElementById('baseNumber').value);
+    const power = parseInt(document.getElementById('powerNumber').value);
+
+    if (isNaN(base) || isNaN(power)) {
+        document.getElementById('powerResult').innerHTML = 'Please enter valid numbers';
+        return;
+    }
+
+    const result = Math.pow(base, power);
+    document.getElementById('powerResult').innerHTML = `
+        <h3>Result:</h3>
+        <p>${base} raised to power ${power} = ${result}</p>
+    `;
+}

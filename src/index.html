@@ -368,6 +368,145 @@
             </div>
             <div id="efficiencyResult"></div>
         </div>
+
+        <div class="calculator-section">
+            <h2>31. Factor Finder</h2>
+            <div class="form-group">
+                <label for="factorNumber">Enter a number:</label>
+                <input type="number" id="factorNumber" min="1">
+                <button onclick="findFactors()">Find Factors</button>
+            </div>
+            <div id="factorResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>32. Prime Number Checker</h2>
+            <div class="form-group">
+                <label for="primeNumber">Enter a number:</label>
+                <input type="number" id="primeNumber" min="1">
+                <button onclick="checkPrime()">Check Prime</button>
+            </div>
+            <div id="primeResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>33. Armstrong Number Checker</h2>
+            <div class="form-group">
+                <label for="armstrongNumber">Enter a number:</label>
+                <input type="number" id="armstrongNumber" min="1">
+                <button onclick="checkArmstrong()">Check Armstrong</button>
+            </div>
+            <div id="armstrongResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>34. Armstrong Numbers Range</h2>
+            <div class="form-group">
+                <button onclick="findArmstrongNumbers()">Find Armstrong Numbers (1-10000)</button>
+            </div>
+            <div id="armstrongRangeResult" class="scrollable-result"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>35. Odd/Even Counter</h2>
+            <div class="form-group">
+                <label for="numberLimit">How many numbers to enter:</label>
+                <input type="number" id="numberLimit" min="1" max="10">
+                <div id="numberInputs"></div>
+                <button onclick="countOddEven()">Count Numbers</button>
+            </div>
+            <div id="oddEvenResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>36. Number Reverser</h2>
+            <div class="form-group">
+                <label for="numberToReverse">Enter a number:</label>
+                <input type="number" id="numberToReverse" min="1">
+                <button onclick="reverseNumber()">Reverse Number</button>
+            </div>
+            <div id="reverseNumberResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>37. Decimal to Binary Converter</h2>
+            <div class="form-group">
+                <label for="decimalNumber">Enter decimal number:</label>
+                <input type="number" id="decimalNumber" min="0">
+                <button onclick="convertToBinary()">Convert to Binary</button>
+            </div>
+            <div id="binaryResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>38. Binary to Decimal Converter</h2>
+            <div class="form-group">
+                <label for="binaryNumber">Enter binary number:</label>
+                <input type="text" id="binaryNumber" pattern="[0-1]*">
+                <button onclick="convertToDecimal()">Convert to Decimal</button>
+            </div>
+            <div id="decimalResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>39. Factorial Calculator</h2>
+            <div class="form-group">
+                <label for="factorialNumber">Enter a number:</label>
+                <input type="number" id="factorialNumber" min="0" max="20">
+                <button onclick="calculateFactorial()">Calculate Factorial</button>
+            </div>
+            <div id="factorialResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>40. Fibonacci Series Generator</h2>
+            <div class="form-group">
+                <label for="fibLimit">Enter the limit:</label>
+                <input type="number" id="fibLimit" min="1" max="50">
+                <button onclick="generateFibonacci()">Generate Series</button>
+            </div>
+            <div id="fibonacciResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>41. Perfect Number Checker</h2>
+            <div class="form-group">
+                <label for="perfectNumber">Enter a number:</label>
+                <input type="number" id="perfectNumber" min="1">
+                <button onclick="checkPerfectNumber()">Check Perfect Number</button>
+            </div>
+            <div id="perfectResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>42. Perfect Numbers Range</h2>
+            <div class="form-group">
+                <button onclick="findPerfectNumbers()">Find Perfect Numbers (1-1000)</button>
+            </div>
+            <div id="perfectRangeResult" class="scrollable-result"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>43. Strong Number Checker</h2>
+            <div class="form-group">
+                <label for="strongNumber">Enter a number:</label>
+                <input type="number" id="strongNumber" min="1">
+                <button onclick="checkStrongNumber()">Check Strong Number</button>
+            </div>
+            <div id="strongResult"></div>
+        </div>
+
+        <div class="calculator-section">
+            <h2>44. Power Calculator</h2>
+            <div class="form-group">
+                <label for="baseNumber">Enter base number:</label>
+                <input type="number" id="baseNumber">
+                <label for="powerNumber">Enter power:</label>
+                <input type="number" id="powerNumber">
+                <button onclick="calculatePower()">Calculate</button>
+            </div>
+            <div id="powerResult"></div>
+        </div>
     </main>
     <footer>
         <p>&copy; 2025 Created by RK</p>
